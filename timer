@@ -14,4 +14,7 @@ progress() {
 	echo
 }
 
-progress
+for slide in $(seq 1 20) ; do
+	echo
+	progress
+done
