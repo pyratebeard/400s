@@ -1,10 +1,14 @@
 #!/bin/sh
 
+# colours
+cyan="\e[36m"
+reset="\e[0m"
+
 progress() {
 	for ((k = 0; k <= 19 ; k++))
 	do
 	    echo -n " >"
-	    for ((i = 1 ; i <= k; i++)); do echo -n "###"; done
+	    for ((i = 1 ; i <= k; i++)); do echo -n "▒▒▒"; done
 	    for ((j = i ; j <= 20 ; j++)); do echo -n "   "; done
 	    #v=$((k * 10))
 	    echo -n "< "
@@ -13,6 +17,13 @@ progress() {
 	done
 	echo
 }
+
+clear
+echo -e "${cyan}
+		┬─┐┬─┐┌─┐┬ ┬┬─┐  ┬┌ ┬ ┐┌─┐┬ ┬┬─┐
+		│─┘├─ │  │─┤│─┤  ├┴┐│ ││  │─┤│─┤
+		┆  ┴─┘└─┘┆ ┴┘ ┆  ┆ ┘┆─┘└─┘┆ ┴┘ ┆
+${reset}"
 
 for slide in $(seq 1 20) ; do
 	echo
